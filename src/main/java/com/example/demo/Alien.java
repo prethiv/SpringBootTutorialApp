@@ -1,13 +1,21 @@
 package com.example.demo;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(value="prototype")
 public class Alien {
 	
 	public int aid;
 	public String name;
 	public String tech;
+	
+	Alien(){
+		super();
+		System.out.println("Alien Constructor");
+	}
+	
 	public int getAid() {
 		return aid;
 	}
