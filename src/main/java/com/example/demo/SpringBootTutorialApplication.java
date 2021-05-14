@@ -13,11 +13,14 @@ public class SpringBootTutorialApplication {
 		a.show();
 		a.setAid(1);
 		System.out.println("Printing A id "+a.getAid());
-		Alien b = context.getBean(Alien.class);
-		b.show();
-		b.setAid(2);
-		System.out.println("Printing B id "+b.getAid());
-		System.out.println("Printing A id "+a.getAid());
+		Human h = context.getBean(Human.class);
+		h.show();
+		a.show();
+//		Alien b = context.getBean(Alien.class);
+//		b.show();
+//		b.setAid(2);
+//		System.out.println("Printing B id "+b.getAid());
+//		System.out.println("Printing A id "+a.getAid());
 
 	}
 
