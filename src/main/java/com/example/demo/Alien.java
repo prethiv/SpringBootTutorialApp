@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,11 @@ import org.springframework.stereotype.Component;
 //Also if we did not use scope annitation by default spring will create a object 
 //for us no matter if we use it or not
 //But if we put scope spring will create a bean instance only on the request.
-
+//Autowired annotation tells spring that this component is dependent on one object that is there in 
+//Spring container 
+//Qualifier annotation tells spring to search from the spring container based on names
+//By default autowired is searching based on class name in small letters which is nothing but type 
+//in this case it is laptop.class
 
 @Component
 @Scope(value="prototype")
@@ -23,6 +28,7 @@ public class Alien {
 	public String name;
 	public String tech;
 	@Autowired
+	@Qualifier("lap1")
 	private Laptop laptop;
 	
 	Alien(){
